@@ -35,6 +35,8 @@ class Profile(models.Model):
 
     avatar = models.ImageField(default='default.jpg', upload_to='profile_images')
     bio = models.TextField()
+    active=models.BooleanField(default=True)
+    aprovate=models.BooleanField(default=True)
 
 
     def __str__(self):
@@ -46,6 +48,8 @@ class AthleteProfile(models.Model):
 
     avatar = models.ImageField(default='default.jpg', upload_to='profile_athlete_images')
     bio = models.TextField(blank=True)
+    active=models.BooleanField(default=True)
+    aprovate=models.BooleanField(default=True)
 
     def save(self, *args, **kwargs):       
         self.user.is_athlete = True
@@ -60,6 +64,8 @@ class ProfessorProfile(models.Model):
 
     avatar = models.ImageField(default='default.jpg', upload_to='profile_professor_images')
     bio = models.TextField(blank=True)
+    active=models.BooleanField(default=False)
+    aprovate=models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):       
         self.user.is_professor = True
@@ -74,6 +80,8 @@ class ExecutiveProfile(models.Model):
 
     avatar = models.ImageField(default='default.jpg', upload_to='profile_executive_images')
     bio = models.TextField(blank=True)
+    active=models.BooleanField(default=False)
+    aprovate=models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):       
         self.user.is_executive = True

@@ -43,6 +43,10 @@ INSTALLED_APPS = [
 ]
 INSTALLED_APPS +=[
     'core',
+    'bloc_notas',
+    'examen_fisico',
+    'examen_medico',
+    'examen_sicologico',
 ]
 INSTALLED_APPS +=[
 

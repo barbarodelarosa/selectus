@@ -1,3 +1,5 @@
+from bloc_notas.models import NoteBloc, NoteImageContent
 from django.contrib import admin
 
-# Register your models here.
+admin.site.register(NoteBloc)
+admin.site.register(NoteImageContent)

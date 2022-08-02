@@ -1,6 +1,7 @@
-from core.models import AthleteProfile, ExecutiveProfile, ProfessorProfile, Profile, User
+from core.models import AthleteProfile, ExecutiveProfile, Group, ProfessorProfile, Profile, User
 from django.contrib import admin
 
+admin.site.register(Group)
 admin.site.register(User)
 admin.site.register(Profile)
 admin.site.register(AthleteProfile)

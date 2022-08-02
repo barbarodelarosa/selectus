@@ -90,3 +90,17 @@ class ExecutiveProfile(models.Model):
         
     def __str__(self):
         return self.user.username
+
+
+class Group(models.Model):
+    professors=models.ManyToManyField(ProfessorProfile, related_name='professors')
+    profesor_active=models.ForeignKey(ProfessorProfile, on_delete=models.PROTECT, related_name='professor_active')
+    athletes=models.ManyToManyField(AthleteProfile)
+    image=models.ImageField(upload_to='groups', blank=True, null=True)
+    name=models.CharField(max_length=50)
+    description=models.TextField(blank=True)
+    created=models.DateTimeField(auto_now_add=True)
+    updated=models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
